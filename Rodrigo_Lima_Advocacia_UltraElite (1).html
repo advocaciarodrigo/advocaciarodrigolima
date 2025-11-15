@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rodrigo Lima Advocacia — Escritório de Alto Padrão</title>
+<meta name="description" content="Rodrigo Lima Advocacia - Escritório de advocacia em Ceilândia. Excelência em direito civil, família, trabalhista e consultoria jurídica. Agende sua consulta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+:root{
+  --bg:#060607;
+  --card:#0f0f10;
+  --muted:#cfcfcf;
+  --gold:#d6b55a;
+  --accent:#25D366;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+body{margin:0; font-family:'Montserrat',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; background:var(--bg); color:var(--muted); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+
+/* Preloader */
+#preloader{position:fixed;inset:0;background:linear-gradient(135deg,#050505,#0b0b0b);display:flex;align-items:center;justify-content:center;z-index:99999}
+#preloader .logo{font-family:'Playfair Display',serif;color:var(--gold);font-size:28px;letter-spacing:1px;transform:scale(0.98);opacity:0;animation:logoIn .9s ease forwards}
+@keyframes logoIn{to{opacity:1;transform:scale(1)}}
+
+/* NAV */
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:999;width:calc(100% - 80px);max-width:1200px;display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-radius:12px;background:linear-gradient(90deg, rgba(0,0,0,0.35), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#3b2b10,#d6b55a);display:flex;align-items:center;justify-content:center;color:#081;box-shadow:0 6px 20px rgba(214,181,90,0.12);font-weight:800}
+.brand .name{font-family:'Playfair Display',serif;color:var(--gold);font-weight:700;font-size:1.05rem}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{background:var(--glass);color:#fff;transform:translateY(-3px)}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,2,2,0.45),rgba(0,0,0,0.75))}
+.hero-inner{position:relative;z-index:2;max-width:1100px;padding:24px}
+.title{font-family:'Playfair Display',serif;color:var(--gold);font-size:clamp(2rem,6vw,4rem);letter-spacing:1px;margin-bottom:12px;text-shadow:0 8px 40px rgba(0,0,0,0.6);animation:shine 2s ease}
+@keyframes shine{0%{filter:brightness(.95)}50%{filter:brightness(1.15)}100%{filter:brightness(.95)}}
+.subtitle{color:#efece6;font-size:1.12rem;margin-bottom:18px;opacity:.95}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.cta-primary{background:linear-gradient(90deg,var(--gold),#f0d78a);color:#0b0b0b;padding:14px 22px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(214,181,90,0.12);transition:transform .18s}
+.cta-primary:hover{transform:translateY(-6px)}
+.cta-ghost{border:1px solid rgba(255,255,255,0.06);padding:12px 18px;border-radius:10px;color:var(--muted);text-decoration:none}
+
+/* HIGHLIGHTS */
+.highlights{display:flex;gap:18px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.h-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));padding:14px 18px;border-radius:12px;min-width:210px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+.h-card strong{display:block;color:var(--gold);font-size:1rem}
+
+/* SECTIONS */
+.container{max-width:1200px;margin:0 auto;padding:60px 20px}
+.section-title{color:var(--gold);font-size:1.6rem;margin-bottom:10px;font-weight:700}
+.lead{color:#e8e3d8;max-width:920px;margin:0 auto 18px}
+
+/* GALLERY */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+.photo{position:relative;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.9,.3,1),filter .5s}
+.photo:hover img{transform:scale(1.06);filter:brightness(1.03)}
+
+/* TESTIMONIALS */
+.testimonials{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
+.testimonial{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));padding:20px;border-radius:12px;max-width:360px;border:1px solid rgba(255,255,255,0.03)}
+
+/* CONTACT & MAP */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start}
+.map{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);height:320px}
+.contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.contact-card h3{color:var(--gold);margin-bottom:6px}
+.info-line{display:flex;gap:12px;align-items:center;margin:10px 0;color:var(--muted)}
+.info-line i{color:var(--gold);font-size:1.05rem;width:28px}
+
+/* STICKY WHATSAPP FAB */
+.fab{position:fixed;right:22px;bottom:22px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fab .big{background:linear-gradient(90deg,#2bd26e,#10a35a);color:#fff;padding:18px 22px;border-radius:60px;font-weight:800;font-size:18px;box-shadow:0 18px 50px rgba(16,163,90,0.18);display:flex;align-items:center;gap:12px;text-decoration:none}
+.fab .mini{background:rgba(255,255,255,0.03);color:var(--muted);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);font-weight:700;text-decoration:none}
+
+/* FOOTER */
+footer{padding:36px 20px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.8));border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:#a9a9a9}
+.footer-grid{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center}
+
+/* Responsive */
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}.nav-links{display:none}.hero{padding:60px 20px}.hero-inner{padding:12px}}
+@media (max-width:520px){.title{font-size:1.6rem}.fab .big{padding:14px 16px;font-size:15px}}
+</style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader"><div class="logo">Rodrigo Lima Advocacia</div></div>
+
+<!-- Nav -->
+<nav>
+  <div class="brand">
+    <div class="mark">R</div>
+    <div class="name">Rodrigo Lima Advocacia</div>
+  </div>
+  <div class="nav-links" aria-hidden="true">
+    <a href="#areas">Áreas</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <div class="nav-actions">
+    <a class="cta-primary" href="https://wa.me/556196334032" target="_blank" rel="noopener">Agende pelo WhatsApp</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" role="banner" aria-label="Rodrigo Lima Advocacia">
+  <div class="hero-inner">
+    <div class="title">Rodrigo Lima Advocacia</div>
+    <div class="subtitle">Excelência. Resultados. Confiança.</div>
+
+    <div class="hero-cta">
+      <a class="cta-primary" href="https://wa.me/556196334032" target="_blank" rel="noopener"><i class="fa fa-whatsapp" aria-hidden="true"></i> Fale agora</a>
+      <a class="cta-ghost" href="#contato">Ver endereço e contato</a>
+    </div>
+
+    <div class="highlights" role="list">
+      <div class="h-card" role="listitem"><strong>Atuação</strong><span style="display:block;color:var(--muted)">Civil • Trabalhista • Família • Consultoria</span></div>
+      <div class="h-card" role="listitem"><strong>Atendimento</strong><span style="display:block;color:var(--muted)">Agendamento • Horário personalizado</span></div>
+      <div class="h-card" role="listitem"><strong>Sigilo</strong><span style="display:block;color:var(--muted)">Confidencialidade e ética</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- AREAS -->
+<section id="areas" class="container">
+  <div class="section-title">Áreas de Atuação</div>
+  <p class="lead">Atuação completa com foco em estratégias que geram resultados — consultoria jurídica, defesas robustas e negociações eficientes.</p>
+
+  <div class="grid">
+    <div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80" alt="Direito Civil"></div>
+    <div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1589395604861-f1f6cf9683a9?auto=format&fit=crop&w=1200&q=80" alt="Direito Trabalhista"></div>
+    <div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1528747045269-390fe33c19d0?auto=format&fit=crop&w=1200&q=80" alt="Direito de Família"></div>
+    <div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80" alt="Consultoria Jurídica"></div>
+  </div>
+</section>
+
+<!-- GALLERY / Testimonials -->
+<section id="galeria" class="container" style="padding-top:20px">
+  <div class="section-title">Galeria & Depoimentos</div>
+  <p class="lead">Ambientes, reuniões com clientes e presença em audiências.</p>
+
+  <div class="grid" style="margin-top:18px">
+    <div class="photo"><img loading="lazy" src="https://images.pexels.com/photos/4427612/pexels-photo-4427612.jpeg" alt="Escritório"></div>
+    <div class="photo"><img loading="lazy" src="https://images.pexels.com/photos/5668773/pexels-photo-5668773.jpeg" alt="Advogado"></div>
+    <div class="photo"><img loading="lazy" src="https://images.pexels.com/photos/6077328/pexels-photo-6077328.jpeg" alt="Reunião"></div>
+  </div>
+
+  <div style="margin-top:28px; display:flex;justify-content:center">
+    <div class="testimonial">"Atendimento exemplar e resultado acima do esperado." — <strong>Cliente satisfeito</strong></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contato" class="container" style="padding-bottom:40px">
+  <div class="section-title">Contato & Localização</div>
+  <p class="lead">Agende uma consulta presencial ou online. Atendimento profissional e confidencial.</p>
+
+  <div class="contact-grid" style="margin-top:22px">
+    <div class="contact-card">
+      <h3>Agendamento</h3>
+      <div class="info-line"><i class="fa fa-phone"></i><div><strong>WhatsApp</strong><br><a href="https://wa.me/556196334032" style="color:var(--gold);text-decoration:none;font-weight:700">+55 61 9633-4032</a></div></div>
+
+      <div class="info-line"><i class="fa fa-map-marker-alt"></i><div><strong>Endereço</strong><br>QNM 34, Conjunto B, Sala 204 — Ceilândia Norte, Brasília/DF</div></div>
+
+      <div class="info-line"><i class="fa fa-clock"></i><div><strong>Horário</strong><br>Seg–Sex: 09:00–18:00 • Sáb: 09:00–12:00</div></div>
+
+      <div style="margin-top:12px">
+        <a class="cta-primary" href="https://wa.me/556196334032" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i> Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="map">
+      <iframe loading="lazy" src="https://www.google.com/maps?q=QNM%2034%20Conjunto%20B%20Sala%20204%20Ceil%C3%A2ndia%20Norte%20Bras%C3%ADlia%20DF&output=embed" width="100%" height="100%" style="border:0"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Floating FABs -->
+<div class="fab">
+  <a class="mini" href="mailto:rodrigo.advocacia@example.com"><i class="fa fa-envelope"></i> E-mail</a>
+  <a class="big" href="https://wa.me/556196334032" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i> +55 61 9633-4032</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="color:var(--gold);font-weight:700">Rodrigo Lima Advocacia</div>
+      <small>QNM 34, Conjunto B, Sala 204 — Ceilândia Norte, Brasília/DF</small>
+    </div>
+  </div>
+  <small style="display:block;margin-top:12px">© 2025 Rodrigo Lima Advocacia — Todos os direitos reservados.</small>
+</footer>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Rodrigo Lima Advocacia",
+  "image": "",
+  "telephone": "+556196334032",
+  "email": "rodrigo.advocacia@example.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "QNM 34, Conjunto B, Sala 204",
+    "addressLocality": "Ceilândia Norte",
+    "addressRegion": "DF",
+    "postalCode": "",
+    "addressCountry": "BR"
+  },
+  "areaServed": "Brasília",
+  "description": "Escritório de advocacia especializado em direito civil, trabalhista, família e consultoria jurídica."
+}
+</script>
+
+<!-- Minimal JS for preloader and smooth scroll -->
+<script>
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var pre = document.getElementById('preloader');
+    if(pre) pre.style.display='none';
+  }, 700);
+});
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var id = this.getAttribute('href').substring(1);
+    var el = document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+
+</body>
+</html>
