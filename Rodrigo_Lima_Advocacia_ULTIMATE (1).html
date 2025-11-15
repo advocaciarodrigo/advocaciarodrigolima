@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Rodrigo Lima Advocacia</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* ===== VIDEO DE FUNDO ===== */
+video.bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.35);
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+  padding: 130px 20px 90px;
+  text-align: center;
+  animation: fadeIn 2.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 55px;
+  color: gold;
+  font-weight: 800;
+  text-shadow: 0 0 20px gold;
+  animation: titleGlow 3s infinite alternate;
+}
+@keyframes titleGlow {
+  from { text-shadow: 0 0 12px gold; }
+  to { text-shadow: 0 0 30px gold; }
+}
+
+.subtitulo {
+  font-size: 26px;
+  margin-top: 18px;
+  opacity: 0;
+  animation: slideDown 2.3s forwards;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SESSÕES ===== */
+section {
+  padding: 60px 25px;
+  backdrop-filter: blur(5px);
+}
+
+.tituloDourado {
+  font-size: 32px;
+  color: gold;
+  text-align: center;
+  margin-bottom: 35px;
+  text-shadow: 0 0 12px gold;
+  animation: fadeInUp 1.4s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CARTÕES ===== */
+.card {
+  background: rgba(15,15,15,0.8);
+  padding: 28px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+  border-left: 4px solid gold;
+  color: #eee;
+  font-size: 20px;
+  line-height: 1.5;
+  box-shadow: 0 0 18px rgba(255,215,0,0.15);
+  transition: .45s;
+  animation: floatUp 1.2s ease;
+}
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 30px rgba(255,215,0,0.4);
+}
+
+/* ===== GALERIA ===== */
+.gallery img {
+  width: 100%;
+  border-radius: 14px;
+  margin: 18px 0;
+  animation: zoomIn 1.4s ease;
+  transition: .5s;
+}
+.gallery img:hover {
+  transform: scale(1.07);
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(1.17); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== BOTÃO WHATSAPP ===== */
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #25D366;
+  padding: 20px 26px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.17); }
+  100% { transform: scale(1); }
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 20px;
+  color: #bbb;
+  font-size: 15px;
+  backdrop-filter: blur(4px);
+}
+</style>
+</head>
+<body>
+
+<!-- ===== VÍDEO DE FUNDO PREMIUM ===== -->
+<video class="bg" autoplay loop muted>
+  <source src="https://cdn.coverr.co/videos/coverr-lawyers-discussing-documents-9097/1080p.mp4" type="video/mp4">
+</video>
+
+<!-- ===== TOPO ===== -->
+<header>
+  <h1>Rodrigo Lima Advocacia</h1>
+  <div class="subtitulo">Justiça com excelência, força e resultado.</div>
+</header>
+
+<!-- ===== ÁREAS ===== -->
+<section>
+  <div class="tituloDourado">Áreas de Atuação</div>
+
+  <div class="card">⚖️ <b>Direito Civil</b> — Execuções, contratos, causas cíveis e indenizações.</div>
+  <div class="card">🏛️ <b>Direito Penal</b> — Defesa completa e atuação estratégica em todas as fases.</div>
+  <div class="card">📑 <b>Trabalhista</b> — Reclamações, acordos e direitos assegurados.</div>
+  <div class="card">💼 <b>Consultoria Jurídica</b> — Empresas e pessoa física com atendimento premium.</div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section>
+  <div class="tituloDourado">Nosso Escritório</div>
+
+  <div class="gallery">
+    <img src="https://images.pexels.com/photos/4427612/pexels-photo-4427612.jpeg">
+    <img src="https://images.pexels.com/photos/5668773/pexels-photo-5668773.jpeg">
+    <img src="https://images.pexels.com/photos/6077328/pexels-photo-6077328.jpeg">
+  </div>
+</section>
+
+<!-- ===== RODAPÉ ===== -->
+<footer>
+  Endereço: QNM 18 Conjunto E, Ceilândia – Brasília/DF<br>
+  Rodrigo Lima Advocacia © Todos os direitos reservados.
+</footer>
+
+<!-- ===== BOTÃO WHATSAPP ===== -->
+<a class="whatsapp" href="https://wa.me/556196334032">📞 WhatsApp</a>
+
+</body>
+</html>
